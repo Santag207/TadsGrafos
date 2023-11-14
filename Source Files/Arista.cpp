@@ -5,5 +5,4 @@ Arista::Arista(Vertice* destino, int precio){
     dest = dest;
     precio = precio;
     sig = nullptr;
-    dest = nullptr;
 }

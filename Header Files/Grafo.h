@@ -15,8 +15,8 @@ public:
     bool EstaVacio();
     int ObtenerTamano();
     Vertice* ObtenerVertice(std::string nombre);
-    void InsertarVertice(std::string nombre);
-    void InsertarArista(std::string ori, std::string dest, int precio);
+    void InsertaVertice(std::string nombre);
+    void InsertaArista(std::string ori, std::string dest, int precio);
     void MostrarListaAdyacencia();
     void EliminarAristasDestino(std::string dest);
     void EliminarAristas(Vertice* vertice);

@@ -17,6 +17,7 @@ int Grafo::ObtenerTamano() {
 
 Vertice *Grafo::ObtenerVertice(std::string nombre) {
     Vertice* i = primero;
+
     while (i != nullptr) {
         if (i->nombre == nombre) {
             return i;
@@ -27,7 +28,7 @@ Vertice *Grafo::ObtenerVertice(std::string nombre) {
     return nullptr;
 }
 
-void Grafo::InsertarVertice(std::string nombre) {
+void Grafo::InsertaVertice(std::string nombre) {
     if (ObtenerVertice(nombre) == nullptr) {
         Vertice* nuevo = new Vertice(nombre);
 
@@ -48,7 +49,7 @@ void Grafo::InsertarVertice(std::string nombre) {
     }
 }
 
-void Grafo::InsertarArista(std::string ori, std::string dest, int precio) {
+void Grafo::InsertaArista(std::string ori, std::string dest, int precio) {
     Vertice* vori = ObtenerVertice(ori);
     Vertice* vdest = ObtenerVertice(dest);
 
@@ -66,6 +67,7 @@ void Grafo::InsertarArista(std::string ori, std::string dest, int precio) {
             vori->ari = nueva;
         } else {
             Arista* J = vori->ari;
+
             while (J->sig != nullptr) {
                 J = J->sig;
             }
@@ -77,11 +79,13 @@ void Grafo::InsertarArista(std::string ori, std::string dest, int precio) {
 
 void Grafo::MostrarListaAdyacencia() {
     Vertice* i = primero;
+
     while (i != nullptr){
         Arista* J = i->ari;
+        std::cout<< i->nombre <<" = "<<std::endl;
 
         while (J != nullptr){
-            std::cout<<i-> nombre<< " -> "<< J->precio << " -> "<< J->dest->nombre <<std::endl; //Imprimir datos de los grafos
+            std::cout<<i-> nombre<< " -> "<< J->precio << " -> "<< J->dest->nombre <<", "; //Imprimir datos de los grafos
             J - J->sig;
         }
         i = i->sig;
@@ -96,6 +100,7 @@ void Grafo::EliminarAristas(Vertice *vertice) {
     }
 
     Arista* i = vertice-> ari;
+
     while(vertice->ari != nullptr){
         i = vertice->ari;
         vertice->ari = vertice->ari->sig;
@@ -107,7 +112,8 @@ void Grafo::EliminarAristas(Vertice *vertice) {
 void Grafo::EliminarAristasDestino(std::string dest) {
     Vertice* i = primero;
     while(i != nullptr){
-        if(i->nombre == dest){
+        if(i->nombre == dest || i->ari == nullptr){
+            i = i->sig;
             continue;
         }
         if(i->ari->dest->nombre == dest){
@@ -206,11 +212,12 @@ void Grafo::EliminarArista(std::string ori, std::string dest) {
 
 void Grafo::EliminarTodo() {
     Vertice* i = primero;
-    while (primero != nullptr){
 
+    while (primero != nullptr){
         i = primero;
         primero = primero->sig;
         EliminarAristas(i);
+        EliminarAristasDestino(i->nombre);
         std::cout<<"Vertice "<<i->nombre<<" fue elimianada"<<std::endl; //Mensaje Verifiacion
         delete(i);
         tamano--;
