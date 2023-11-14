@@ -170,9 +170,49 @@ void Grafo::EliminarVertice(std::string nombre) {
 }
 
 void Grafo::EliminarArista(std::string ori, std::string dest) {
+    Vertice* vori = ObtenerVertice(ori);
+    Vertice* vdest = ObtenerVertice(dest);
 
+    if (vori == nullptr){
+        std::cout<<"El vertice origen no existe"<<std::endl; //Mensaje Verifiacion
+    }
+
+    if (vdest == nullptr){
+        std::cout<<"El vertice destino no existe"<<std::endl; //Mensaje Verifiacion
+    }
+    if (vori != nullptr && vdest != nullptr){
+        if(vori->ari->dest == vdest){
+            Arista* i = vori->ari;
+            vori->ari = vori->ari->sig;
+            std::cout<<"Arista "<<ori<<" -> "<< dest <<" fue elimianada"<<std::endl; //Mensaje Verifiacion
+            delete(i);
+        }
+        else{
+            Arista* i = vori->ari;
+            Arista* J = vori->ari;
+            while(J != nullptr){
+                if(J->dest == vdest){
+                    i->sig = J->sig;
+                    std::cout<<"Arista "<<ori<<" -> "<< dest <<" fue elimianada"<<std::endl; //Mensaje Verifiacion
+                    delete(J);
+                    break;
+                }
+                i = J;
+                J = J->sig;
+            }
+        }
+    }
 }
 
 void Grafo::EliminarTodo() {
+    Vertice* i = primero;
+    while (primero != nullptr){
 
+        i = primero;
+        primero = primero->sig;
+        EliminarAristas(i);
+        std::cout<<"Vertice "<<i->nombre<<" fue elimianada"<<std::endl; //Mensaje Verifiacion
+        delete(i);
+        tamano--;
+    }
 }
