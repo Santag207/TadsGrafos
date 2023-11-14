@@ -1,0 +1,8 @@
+# ninja log v5
+1	370	7216242523167438	CMakeFiles/untitled1.dir/main.cpp.obj	7c7f29b3f3ea0ac3
+10	73	7216242520211286	CMakeFiles/untitled1.dir/Grafo.cpp.obj	2ab86be319e303fe
+1	150	7216245389356284	build.ninja	75080407bdf69627
+3	63	7216245390666610	CMakeFiles/untitled1.dir/Source_Files/Arista.cpp.obj	8a47335a09c2d054
+7	70	7216245390721967	CMakeFiles/untitled1.dir/Source_Files/Grafo.cpp.obj	c872dd161ed2e22c
+12	230	7216245392342669	CMakeFiles/untitled1.dir/Source_Files/Vertice.cpp.obj	60e8e5f480fc72c3
+230	349	7216245393486517	untitled1.exe	76fcd883de3b0658
