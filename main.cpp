@@ -310,3 +310,37 @@ int main()
     delete grafo;
     return 0;
 }
+
+/*
+Diseño TADs
+    +----------------+       +----------------+       +----------------+
+    |     Grafo      |-------|    Vertice     |-------|     Arista     |
+    +----------------+       +----------------+       +----------------+
+    | - primero      |       | - nombre       |       | - precio       |
+    | - tamano       |       | - sig          |       | - sig          |
+    |                |       | - ari          |       | - dest         |
+    |                |       +----------------+       +----------------+
+    |                |
+    | - EstaVacio()  |
+    | - ObtenerTamano|
+    | - ObtenerVertice|
+    | - InsertaVertice|
+    | - InsertaArista|
+    | - MostrarListaA|
+    | - EliminarVerti|
+    | - EliminarArist|
+    | - EliminarTodo |
+    | - EliminarArist|
+    | - EliminarArist|
+    | - RecorridoAnch|
+    | - RecorridoProf|
+    | - PrimeroEnAnc |
+    | - PrimeroEnPro |
+    | - PrimeroElMej |
+    | - MostrarRutaE|
+    | - Dijkstra     |
+    | - Kruskal      |
+    | - Prim         |
+    +----------------+
+
+ */
