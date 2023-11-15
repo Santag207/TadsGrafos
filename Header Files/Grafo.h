@@ -12,6 +12,35 @@
 #pragma once
 
 
+/*
+Clase Grafo:
+    Atributos:
+        - primero: puntero a Vertice
+        - tamano: entero
+
+    Métodos:
+        - Grafo() // Constructor
+        - EstaVacio() -> booleano
+        - ObtenerTamano() -> entero
+        - ObtenerVertice(nombre: cadena) -> puntero a Vertice
+        - InsertaVertice(nombre: cadena)
+        - InsertaArista(ori: cadena, dest: cadena, precio: entero)
+        - MostrarListaAdyacencia()
+        - EliminarVertice(nombre: cadena)
+        - EliminarArista(ori: cadena, dest: cadena)
+        - EliminarTodo()
+        - EliminarAristas(vertice: puntero a Vertice)
+        - EliminarAristasDestino(dest: cadena)
+        - RecorridoAnchura(origen: cadena)
+        - RecorridoProfundidad(origen: cadena)
+        - PrimeroEnAnchura(origen: cadena, destino: cadena)
+        - PrimeroEnProfundidad(origen: cadena, destino: cadena)
+        - PrimeroElMejor(origen: cadena, destino: cadena)
+        - MostrarRutaEncontrada(pilaPar: pila de pares de Vertice, vdest: puntero a Vertice)
+        - Dijkstra(origen: cadena)
+        - Kruskal()
+        - Prim(origen: cadena)
+ */
 
 class Grafo
 {

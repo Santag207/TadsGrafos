@@ -1,6 +1,17 @@
 #ifndef UNTITLED1_ARISTA_H
 #define UNTITLED1_ARISTA_H
 
+/*
+Clase Arista:
+    Atributos:
+        - precio: entero
+        - sig: puntero a Arista
+        - dest: puntero a Vertice
+
+    Métodos:
+        - Arista(destino: puntero a Vertice, precio: entero) // Constructor
+ */
+
 class Vertice;
 
 class Arista {

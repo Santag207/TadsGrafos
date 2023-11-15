@@ -4,6 +4,17 @@
 #include <string>
 
 
+/*
+Clase Vertice:
+    Atributos:
+        - nombre: cadena
+        - sig: puntero a Vertice
+        - ari: puntero a Arista
+
+    Métodos:
+        - Vertice(nombre: cadena) // Constructor
+ */
+
 class Arista;
 
 class Vertice {
