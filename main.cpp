@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "Header Files/Grafo.h"
 
@@ -7,8 +6,38 @@ int main()
     Grafo* grafo = new Grafo();
     int opc = 0;
 
-    //Ingreso datos automatico
+
     grafo->InsertaVertice("A");
+    grafo->InsertaVertice("B");
+    grafo->InsertaVertice("C");
+    grafo->InsertaVertice("D");
+    grafo->InsertaVertice("E");
+    grafo->InsertaVertice("F");
+    grafo->InsertaVertice("G");
+    grafo->InsertaArista("A", "B", 7);
+    grafo->InsertaArista("A", "D", 5);
+    grafo->InsertaArista("B", "A", 7);
+    grafo->InsertaArista("B", "C", 8);
+    grafo->InsertaArista("B", "D", 9);
+    grafo->InsertaArista("B", "E", 7);
+    grafo->InsertaArista("C", "B", 8);
+    grafo->InsertaArista("C", "E", 5);
+    grafo->InsertaArista("D", "A", 5);
+    grafo->InsertaArista("D", "B", 9);
+    grafo->InsertaArista("D", "E", 15);
+    grafo->InsertaArista("D", "F", 6);
+    grafo->InsertaArista("E", "B", 7);
+    grafo->InsertaArista("E", "C", 5);
+    grafo->InsertaArista("E", "D", 15);
+    grafo->InsertaArista("E", "F", 8);
+    grafo->InsertaArista("E", "G", 9);
+    grafo->InsertaArista("F", "D", 6);
+    grafo->InsertaArista("F", "E", 8);
+    grafo->InsertaArista("F", "G", 11);
+    grafo->InsertaArista("G", "E", 9);
+    grafo->InsertaArista("G", "F", 11);
+
+    /*grafo->InsertaVertice("A");
     grafo->InsertaVertice("B");
     grafo->InsertaVertice("C");
     grafo->InsertaVertice("D");
@@ -34,26 +63,26 @@ int main()
     grafo->InsertaArista("F", "A", 12);
     grafo->InsertaArista("F", "B", 8);
     grafo->InsertaArista("F", "E", 42);
-    grafo->InsertaArista("G", "D", 17);
+    grafo->InsertaArista("G", "D", 17);*/
 
     while (opc != 16){
         system("cls");
-        std:: cout << "1. Insertar vertice" << std::endl;
+        std::cout << "1. Insertar vertice" << std::endl;
         std::cout << "2. Insertar arista" << std::endl;
         std::cout << "3. Obtener tamano" << std::endl;
         std::cout << "4. Mostrar lista de adyacencia" << std::endl;
         std::cout << "5. Eliminar vertice" << std::endl;
         std::cout << "6. Eliminar arista" << std::endl;
         std::cout << "7. Eliminar todo" << std::endl;
-        //std::cout << "8. Recorrido en anchura" << std::endl;
-        //std::cout << "9. Recorrido en profundidad" << std::endl;
-        //std::cout << "10. Primero en anchura" << std::endl;
-        //std::cout << "11. Primero en profundidad" << std::endl;
-        //std::cout << "12. Primero el mejor" << std::endl;
-        //std::cout << "13. Dijkstra" << std::endl;
-        //std::cout << "14. Kruskal" << std::endl;
-        //std::cout << "15. Prim" << std::endl;
-        std:: cout << "16. Salir" << std::endl;
+        std::cout << "8. Recorrido en anchura" << std::endl;
+        std::cout << "9. Recorrido en profundidad" << std::endl;
+        std::cout << "10. Primero en anchura" << std::endl;
+        std::cout << "11. Primero en profundidad" << std::endl;
+        std::cout << "12. Primero el mejor" << std::endl;
+        std::cout << "13. Dijkstra" << std::endl;
+        std::cout << "14. Kruskal" << std::endl;
+        std::cout << "15. Prim" << std::endl;
+        std::cout << "16. Salir" << std::endl;
 
         std::cout << std::endl;
         std::cout << "Ingrese una opcion del menu: ";
@@ -69,6 +98,7 @@ int main()
                 std::cin >> nombre;
 
                 grafo->InsertaVertice(nombre);
+
                 break;
             }
             case 2:
@@ -88,6 +118,7 @@ int main()
 
                     grafo->InsertaArista(ori, dest, precio);
                 }
+
                 break;
             }
             case 3:
@@ -103,6 +134,7 @@ int main()
                     std::cout << "El grafo esta vacio" << std::endl;
                 else
                     grafo->MostrarListaAdyacencia();
+
                 break;
             }
             case 5:
@@ -117,6 +149,7 @@ int main()
 
                     grafo->EliminarVertice(nombre);
                 }
+
                 break;
             }
             case 6:
@@ -143,9 +176,10 @@ int main()
                 {
                     grafo->EliminarTodo();
                 }
+
                 break;
             }
-            /*case 8:
+            case 8:
             {
                 if (grafo->EstaVacio())
                     std::cout << "El grafo esta vacio" << std::endl;
@@ -157,6 +191,7 @@ int main()
 
                     grafo->RecorridoAnchura(nombre);
                 }
+
                 break;
             }
             case 9:
@@ -171,6 +206,7 @@ int main()
 
                     grafo->RecorridoProfundidad(nombre);
                 }
+
                 break;
             }
             case 10:
@@ -187,6 +223,7 @@ int main()
 
                     grafo->PrimeroEnAnchura(ori, dest);
                 }
+
                 break;
             }
             case 11:
@@ -203,6 +240,7 @@ int main()
 
                     grafo->PrimeroEnProfundidad(ori, dest);
                 }
+
                 break;
             }
             case 12:
@@ -217,8 +255,9 @@ int main()
                     std::cout << "Ingrese el nombre del vertice destino: ";
                     std::cin >> dest;
 
-                    grafo->PrimeroElMejor(ori, dest);
+                    grafo->PrimeroElMejor(ori,dest);
                 }
+
                 break;
             }
             case 13:
@@ -233,6 +272,7 @@ int main()
 
                     grafo->Dijkstra(ori);
                 }
+
                 break;
             }
             case 14:
@@ -243,6 +283,7 @@ int main()
                 {
                     grafo->Kruskal();
                 }
+
                 break;
             }
             case 15:
@@ -253,20 +294,19 @@ int main()
                 {
                     std::string nombre;
                     std::cout << "Ingrese el nombre del vertice origen: ";
-                    std:: cin >> nombre;
+                    std::cin >> nombre;
 
                     grafo->Prim(nombre);
                 }
-                break;
-            }*/
-            default: {
-                std::cout << "Opcion invalida" << std::endl;
+
                 break;
             }
         }
+
         std::cin.get();
         std::cin.get();
     }
+
     delete grafo;
     return 0;
 }
