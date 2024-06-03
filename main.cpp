@@ -35,7 +35,6 @@ int main()
     grafo->InsertaArista("F", "E", 8);
     grafo->InsertaArista("F", "G", 11);
     grafo->InsertaArista("G", "E", 9);
-    grafo->InsertaArista("G", "F", 11);
 
     /*grafo->InsertaVertice("A");
     grafo->InsertaVertice("B");
